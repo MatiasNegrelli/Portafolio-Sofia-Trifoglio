@@ -14,7 +14,7 @@ const About = () => {
           <div className="lg:w-1/3 mb-8 lg:mb-0 relative">
             <div className="relative z-10">
               <img
-                src="/Foto%20personal%201.png"
+                src="/foto2.png"
                 alt="Sofía Trifoglio, Community Manager"
                 className="rounded-lg shadow-2xl w-full bg-white bg-opacity-40"
               />

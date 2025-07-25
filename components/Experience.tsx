@@ -7,22 +7,22 @@ const Experience = () => {
       description:
         "Gestión integral de redes sociales para aumentar la visibilidad de propiedades y captar nuevos clientes. Creación de contenido visual atractivo y campañas de segmentación.",
       logoColor: "bg-blue-500",
-      image: "../public/Feed LAPEZ.PNG",
+      image: "/FeedLAPEZ.png",
     },
     {
       client: "Nimai Centro Interdisciplinado",
       description:
         "Desarrollo de una comunidad online, compartiendo contenido de valor sobre terapias y talleres. Estrategia enfocada en generar confianza y posicionar a los profesionales.",
       logoColor: "bg-teal-500",
-      image: "../public/Feed NIMAI.jpg",
+      image: "/FeedNIMAI.jpg",
     },
     {
       client: "Canycat's Pet Shop",
       description:
         "Rediseño de la identidad visual en Instagram, optimizando la biografía y creando portadas de historias destacadas para mejorar la coherencia de marca y el engagement.",
       logoColor: "bg-amber-500",
-      beforeImage: "../public/Bio y destacadas antes.PNG",
-      afterImage: "../public/Optimización bio y destacadas después.PNG",
+      beforeImage: "Bioantes.png",
+      afterImage: "/biodespues.png",
     },
   ];
 
