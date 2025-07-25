@@ -21,14 +21,15 @@ const Contact = () => {
         <div className="max-w-3xl mx-auto flex flex-col items-center gap-10">
           <div className="w-full flex flex-col sm:flex-row gap-6">
             <a
-              href="https://wa.me/543513319968"
+              href="https://wa.me/543513319968?text=Hola%20Sofi!%20Estuve%20viendo%20tu%20portfolio%20y%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20tus%20servicios%20como%20community%20manager.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20trabaj%C3%A1s,%20qu%C3%A9%20ofrec%C3%A9s%20y%20si%20podemos%20coordinar%20una%20reuni%C3%B3n%20para%20hablar%20m%C3%A1s%20en%20detalle.%20Gracias!"
+              target="_blank"
               className="group flex-1 bg-gray-800/50 p-6 rounded-2xl border border-gray-700 hover:border-pink-500 hover:bg-gray-800 transition-all duration-300 flex items-center gap-5"
             >
               <div className="bg-gradient-to-br from-pink-500 to-orange-400 p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-                <PhoneIcon className="w-7 h-7 text-white" />
+                <PhoneIcon className="w-10 h-10 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">Teléfono</h3>
+                <h3 className="text-xl font-bold text-white">Whatsapp</h3>
                 <p className="text-gray-400 group-hover:text-pink-300 transition-colors duration-300">
                   +54 351 331-9968
                 </p>

@@ -3,7 +3,7 @@ import React from "react";
 const Experience = () => {
   const projects = [
     {
-      client: "Lopez Inmobiliaria",
+      client: "Lapez Inmobiliaria",
       description:
         "Gestión integral de redes sociales para aumentar la visibilidad de propiedades y captar nuevos clientes. Creación de contenido visual atractivo y campañas de segmentación.",
       logoColor: "bg-blue-500",

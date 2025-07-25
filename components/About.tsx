@@ -38,16 +38,16 @@ const About = () => {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700">
               <a
-                href="https://wa.me/543513319968"
+                href="https://wa.me/543513319968?text=Hola%20Sofi!%20Estuve%20viendo%20tu%20portfolio%20y%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20tus%20servicios%20como%20community%20manager.%20Me%20gustar%C3%ADa%20saber%20c%C3%B3mo%20trabaj%C3%A1s,%20qu%C3%A9%20ofrec%C3%A9s%20y%20si%20podemos%20coordinar%20una%20reuni%C3%B3n%20para%20hablar%20m%C3%A1s%20en%20detalle.%20Gracias!"
+                target="_blank"
                 className="flex items-center space-x-3 p-2 rounded-lg hover:bg-pink-50 transition-colors"
               >
-                <PhoneIcon className="w-5 h-5 text-pink-500" />
+                <PhoneIcon className="w-7 h-7 text-pink-500" />
                 <span>+54 351 331-9968</span>
               </a>
               <a
-                href="https://wa.me/543513319968"
+                href="https://www.instagram.com/sofitrifoglio/"
                 target="_blank"
-                rel="noopener noreferrer"
                 className="flex items-center space-x-3 p-2 rounded-lg hover:bg-pink-50 transition-colors"
               >
                 <InstagramIcon className="w-5 h-5 text-pink-500" />
