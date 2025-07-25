@@ -21,7 +21,7 @@ const Experience = () => {
       description:
         "Rediseño de la identidad visual en Instagram, optimizando la biografía y creando portadas de historias destacadas para mejorar la coherencia de marca y el engagement.",
       logoColor: "bg-amber-500",
-      beforeImage: "/Bioantes.png",
+      beforeImage: "/bioantes.png",
       afterImage: "/biodespues.png",
     },
   ];
