@@ -77,7 +77,7 @@ const Hero = () => {
           <div className="relative w-80 h-80 lg:w-96 lg:h-96">
             <div className="absolute inset-0 bg-white rounded-full blur-2xl opacity-60"></div>
             <img
-              src="../Public/Foto personal 1.png"
+              src="/foto-personal-1.png"
               alt="Sofía Trifoglio"
               className="relative object-cover w-full h-full rounded-full shadow-2xl"
             />
