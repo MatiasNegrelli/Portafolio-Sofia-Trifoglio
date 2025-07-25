@@ -29,4 +29,3 @@ Este proyecto fue construido utilizando tecnologías web modernas para garantiza
 *   **Estilos:** [TailwindCSS](https://tailwindcss.com/)
 *   **Animaciones:** [Typed.js](https://github.com/mattboldt/typed.js) para la animación del texto principal y transiciones de CSS para efectos en la interfaz.
 *   **Carga de Módulos:** Las dependencias se cargan directamente en el navegador mediante Módulos ES desde [esm.sh](https://esm.sh/).
-*   
