@@ -16,17 +16,65 @@
       .font-gochi {
         font-family: 'Gochi Hand', cursive;
       }
+
       @keyframes scroll-x {
         from {
           transform: translateX(0);
         }
         to {
-          transform: translateX(-100%);
+          transform: translateX(-50%);
         }
       }
+
       .animate-scroll-x {
-        animation: scroll-x 10s linear infinite;
+        animation: scroll-x 25s linear infinite; /* Desktop default */
       }
+
+      /* Apply faster animation for screens up to a certain width (e.g., typical mobile) */
+      @media (max-width: 768px) { /* Adjust this breakpoint as needed */
+        .animate-scroll-x {
+          animation-duration: 25s; /* Halve the duration for mobile */
+        }
+      }
+
+      /* You could also target smaller devices with a even shorter duration if needed */
+      @media (max-width: 480px) {
+        .animate-scroll-x {
+          animation-duration: 25s; /* Even faster for very small screens */
+        }
+      }
+
+   
+      /* Estilos por defecto para pantallas más grandes (Desktop, tabletas grandes) */
+      .custom-h1-size {
+        font-size: 3.75rem; /* Equivalente a text-6xl de Tailwind (60px) */
+        line-height: 1.2; /* Ajusta si es necesario */
+      }
+
+      /* Estilos para pantallas de hasta 768px de ancho (típicamente móviles y tabletas pequeñas) */
+      @media (max-width: 768px) {
+        .custom-h1-size {
+          font-size: 2.5rem; /* Equivalente a text-4xl de Tailwind (40px) */
+          line-height: 1.2; /* Ajusta si es necesario */
+        }
+      }
+
+      /* Si necesitas un breakpoint aún más pequeño, por ejemplo para móviles muy pequeños */
+      @media (max-width: 480px) {
+        .custom-h1-size {
+          font-size: 2rem; /* Por ejemplo, un tamaño aún más pequeño */
+          line-height: 1.2;
+        }
+      }
+
+      /* Si necesitas un breakpoint aún más pequeño, por ejemplo para móviles muy pequeños */
+      @media (max-width: 480px) {
+        .custom-h1-size {
+          font-size: 2rem; /* Por ejemplo, un tamaño aún más pequeño */
+          line-height: 1.2;
+        }
+      }
+      
     </style>
   <script type="importmap">
 {

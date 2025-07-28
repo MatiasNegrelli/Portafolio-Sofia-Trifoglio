@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 // --- Start of Icon Components ---
 const ChevronLeftIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -182,11 +182,53 @@ const Carousel: React.FC<CarouselProps> = ({
 // --- Start of StoryScroller Component ---
 const StoryScroller: React.FC<{ stories: string[] }> = ({ stories }) => {
   if (!stories || stories.length === 0) return null;
+
+  // Duplicamos las historias para el bucle infinito
   const storySlides = [...stories, ...stories];
+
+  // Ref para el contenedor animado
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  // Estado para guardar el ancho calculado (esto es crucial)
+  const [scrollerWidth, setScrollerWidth] = useState("auto");
+
+  useEffect(() => {
+    if (scrollerRef.current) {
+      // Calcular el ancho total de una *sola* colección de historias
+      // Multiplicamos por 2 porque duplicamos las historias.
+      // El 50% de -translateX(-50%) se refiere al 50% del *ancho total de storySlides*.
+      // Si el ancho total de storySlides es X, entonces el -50% es X/2.
+      // Queremos que X/2 sea el ancho de la colección original.
+      // Así que el ancho total de storySlides debe ser el doble de la colección original.
+
+      // Obtener todos los elementos individuales de las historias
+      const storyElements = Array.from(scrollerRef.current.children);
+      if (storyElements.length > 0) {
+        let totalOriginalWidth = 0;
+        // Calcular el ancho de la primera mitad de los elementos (la colección original)
+        // Iteramos solo sobre la mitad de los elementos porque `storySlides` los duplica
+        for (let i = 0; i < stories.length; i++) {
+          const element = storyElements[i] as HTMLElement;
+          totalOriginalWidth += element.offsetWidth; // Ancho del elemento individual
+          // Sumar el espacio entre elementos (space-x-6 en Tailwind es 1.5rem = 24px)
+          if (i < stories.length - 1) {
+            totalOriginalWidth += 24; // Tailwind space-x-6 = 24px
+          }
+        }
+        // El ancho del contenedor .animate-scroll-x debe ser el doble del ancho original.
+        setScrollerWidth(`${totalOriginalWidth * 2}px`);
+      }
+    }
+  }, [stories]); // Recalcular si las historias cambian
 
   return (
     <div className="relative w-full overflow-hidden group py-4" tabIndex={0}>
-      <div className="flex animate-scroll-x space-x-6">
+      {/* Aplicamos el ancho calculado aquí */}
+      <div
+        ref={scrollerRef}
+        className="flex animate-scroll-x space-x-6"
+        style={{ width: scrollerWidth }}
+      >
         {storySlides.map((story, index) => (
           <div key={index} className="flex-shrink-0">
             <div className="w-[180px] h-[320px] sm:w-[250px] sm:h-[445px] p-1.5 bg-neutral-800 rounded-3xl shadow-lg">
