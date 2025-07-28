@@ -13,7 +13,6 @@ const Testimonials = () => {
     "Na sofi tremendo está, Muy bueno",
     "Sofi muchas gracias hoy estuvo muy bueno",
     "Buena tu idea de por si tuvo muchas visualizaciones y 3 ventas en 4 días pero no consigo el producto",
-    "Muy bueno el video de ayer eh",
   ];
 
   return (
