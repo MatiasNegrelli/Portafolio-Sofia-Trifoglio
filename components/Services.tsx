@@ -1,6 +1,9 @@
-
 import React from 'react';
-import { CheckCircleIcon } from './icons';
+// Asegúrate de que CheckCircleIcon esté disponible o importado correctamente
+// import { CheckCircleIcon } from './icons'; // Si 'icons' es un archivo local
+// Si CheckCircleIcon es de Heroicons, asegúrate de importarlo así:
+import { CheckCircleIcon } from '@heroicons/react/24/outline';
+
 
 interface PricingCardProps {
   plan: string;
@@ -91,7 +94,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 relative overflow-hidden">
+    <section id="plans" className="py-20 relative overflow-hidden">
       <div className="absolute top-1/4 left-0 -translate-x-1/2 w-96 h-96 bg-fuchsia-100 rounded-full blur-3xl opacity-40 z-0"></div>
       <div className="absolute bottom-0 right-0 translate-x-1/2 w-[40rem] h-[40rem] bg-orange-100 rounded-full blur-3xl opacity-40 z-0"></div>
 
@@ -101,23 +104,34 @@ const Services = () => {
           <p className="mt-4 text-lg text-gray-600">Mejora tu presencia digital con asesoría profesional.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8">
+        {/* CAMBIO: Contenedor de planes de grid a flex-wrap justify-center */}
+        <div className="flex flex-wrap justify-center gap-12 lg:gap-8">
           {plans.map((plan) => (
-            <PricingCard key={plan.plan} {...plan} />
+            <div 
+              key={plan.plan} 
+              className={`
+                w-full /* Por defecto, ocupa todo el ancho en móvil */
+                sm:w-[calc(100%-theme(gap.12))] /* Ajuste para gap en pantallas pequeñas si hay 1 columna */
+                md:w-[calc(50%-theme(gap.12)/2)] /* En md, 2 columnas, ajustando el gap */
+                lg:w-[calc(33.333%-theme(gap.8)*2/3)] /* En lg, 3 columnas, ajustando el gap */
+              `}
+            >
+              <PricingCard {...plan} />
+            </div>
           ))}
         </div>
 
         <div className="mt-20 max-w-4xl mx-auto">
             <div className="bg-gray-900 text-white p-8 rounded-3xl shadow-xl">
-                 <h3 className="text-center text-3xl font-bold mb-6">TODOS LOS PAQUETES INCLUYEN:</h3>
-                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                     {includedFeatures.map((feature, index) => (
-                         <li key={index} className="flex items-center">
-                             <CheckCircleIcon className="w-5 h-5 text-pink-400 mr-3 flex-shrink-0" />
-                             <span>{feature}</span>
-                         </li>
-                     ))}
-                 </ul>
+                   <h3 className="text-center text-3xl font-bold mb-6">TODOS LOS PAQUETES INCLUYEN:</h3>
+                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                       {includedFeatures.map((feature, index) => (
+                           <li key={index} className="flex items-center">
+                               <CheckCircleIcon className="w-5 h-5 text-pink-400 mr-3 flex-shrink-0" />
+                               <span>{feature}</span>
+                           </li>
+                       ))}
+                   </ul>
             </div>
         </div>
 
@@ -126,6 +140,11 @@ const Services = () => {
           <p className="mt-4 text-lg text-gray-600">Impulsá tu presencia online con contenido único y publicidad dirigida.</p>
         </div>
 
+        {/* Este contenedor ya usaba grid-cols-1 md:grid-cols-2 y max-w-4xl mx-auto, lo que ya lo centra bien para 2 elementos.
+            No necesita el cambio a flexbox a menos que quieras más de 2 columnas en algún punto.
+            Si quieres que la última fila de "Otros Servicios" también se centre si hay un número impar de elementos,
+            entonces también aplicaríamos flexbox aquí. Por ahora, lo dejaré como está, ya que solo hay 2.
+        */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-8 max-w-4xl mx-auto">
           {otherServices.map((service, index) => (
               <div key={index} className="relative bg-gray-900 text-white p-8 rounded-3xl shadow-2xl flex flex-col z-10">
@@ -141,8 +160,8 @@ const Services = () => {
                     ))}
                   </ul>
                   <div className="text-center mt-4">
-                     <p className="text-2xl font-bold">Precio a coordinar</p>
-                     <p className="text-gray-400">precio único</p>
+                      <p className="text-2xl font-bold">Precio a coordinar</p>
+                      <p className="text-gray-400">precio único</p>
                   </div>
               </div>
           ))}

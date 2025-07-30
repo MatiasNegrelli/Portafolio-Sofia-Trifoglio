@@ -9,8 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "swiper": "^11.2.10",
     "typed.js": "^2.1.0"
   },
   "devDependencies": {

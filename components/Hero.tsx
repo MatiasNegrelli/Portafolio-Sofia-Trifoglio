@@ -39,11 +39,10 @@ const TypedEffect: React.FC<TypedEffectProps> = ({
 };
 
 const Hero = () => {
-  return (
-    <section className="relative overflow-hidden">
+  return (<section className="relative overflow-hidden">
       <div className="container mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center relative z-10">
         <div className="md:w-1/2 lg:w-3/5 text-center md:text-left mb-12 md:mb-0">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4 hero-h1">
             Transforma tu Marca Online con
             <span className="bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 text-transparent bg-clip-text">
               <TypedEffect
@@ -55,8 +54,12 @@ const Hero = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto md:mx-0">
-            Como tu Community Manager, potenciaré tu presencia digital con
-            estrategias creativas y contenido que conecta.
+            Como tu{" "}
+            <span className="bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 text-transparent bg-clip-text font-semibold">
+              Community Manager
+            </span>
+            , potenciaré tu presencia digital con estrategias creativas y
+            contenido que conecta.
           </p>
           <div className="flex justify-center md:justify-start space-x-4">
             <a

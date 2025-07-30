@@ -37,7 +37,20 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="break-inside-avoid bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-200/80 transform transition-all duration-300 hover:-translate-y-1.5 hover:shadow-pink-100 hover:border-pink-300"
+              className={`
+                break-inside-avoid bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-200/80
+                transform transition-all duration-300 hover:-translate-y-1.5 hover:shadow-pink-100 hover:border-pink-300
+                /* Aplicamos la clase CSS de la animación */
+                testimonial-float
+                /* Aplicamos la clase de retraso escalonado */
+                ${
+                  index % 3 === 0
+                    ? "testimonial-delay-0"
+                    : index % 3 === 1
+                    ? "testimonial-delay-1"
+                    : "testimonial-delay-2"
+                }
+              `}
             >
               <div className="flex gap-4 items-start">
                 <div className="text-pink-400 flex-shrink-0 mt-1">

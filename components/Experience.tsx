@@ -434,7 +434,7 @@ const Experience = () => {
                     <StoryScroller stories={project.stories} />
                   </CollapsibleSection>
 
-                  <CollapsibleSection title="Reel / Video">
+                  <CollapsibleSection title="Reels / Videos">
                     <div className="aspect-video w-full max-w-xl mx-auto bg-black rounded-2xl overflow-hidden shadow-lg border">
                       <iframe
                         src={project.videoUrl}

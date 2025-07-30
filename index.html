@@ -44,37 +44,58 @@
         }
       }
 
-   
-      /* Estilos por defecto para pantallas más grandes (Desktop, tabletas grandes) */
-      .custom-h1-size {
-        font-size: 3.75rem; /* Equivalente a text-6xl de Tailwind (60px) */
-        line-height: 1.2; /* Ajusta si es necesario */
-      }
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px); /* Ajusta la altura del flotado */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 
-      /* Estilos para pantallas de hasta 768px de ancho (típicamente móviles y tabletas pequeñas) */
-      @media (max-width: 768px) {
-        .custom-h1-size {
-          font-size: 2.5rem; /* Equivalente a text-4xl de Tailwind (40px) */
-          line-height: 1.2; /* Ajusta si es necesario */
-        }
-      }
+/* ANIMACIONES PARA TESTIMONIOS */
+.testimonial-float {
+  animation: floatAnimation 5s ease-in-out infinite; /* Nombre, duración, easing, repetición */
+}
 
-      /* Si necesitas un breakpoint aún más pequeño, por ejemplo para móviles muy pequeños */
-      @media (max-width: 480px) {
-        .custom-h1-size {
-          font-size: 2rem; /* Por ejemplo, un tamaño aún más pequeño */
-          line-height: 1.2;
-        }
-      }
+/* Clases para los retrasos escalonados */
+.testimonial-delay-0 {
+  animation-delay: 0s;
+}
 
-      /* Si necesitas un breakpoint aún más pequeño, por ejemplo para móviles muy pequeños */
-      @media (max-width: 480px) {
-        .custom-h1-size {
-          font-size: 2rem; /* Por ejemplo, un tamaño aún más pequeño */
-          line-height: 1.2;
-        }
-      }
-      
+.testimonial-delay-1 {
+  animation-delay: 0.5s;
+}
+
+.testimonial-delay-2 {
+  animation-delay: 1s;
+}
+
+/* ALTURA DEL H1 DEL HERO */
+.hero-h1 {
+  line-height: 1.2; /* Ajusta el espacio entre líneas */
+  height: 8rem; /* Ajusta la altura máxima */
+}
+
+/* Para tablets y pantallas medianas, aumenta la altura */
+@media (min-width: 768px) {
+  .hero-h1 {
+    height: 12rem; /* Ajusta la altura máxima */
+  }
+}
+/* Para desktop, altura normal */
+@media (min-width: 1280px) {
+  .hero-h1 {
+    height: 8rem; /* Ajusta la altura máxima */
+  }
+}
+
+
+
+
     </style>
   <script type="importmap">
 {

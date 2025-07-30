@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import MyApproach from "./components/MyApproach";
 import Services from "./components/Services";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
@@ -23,6 +24,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <MyApproach />
         <Experience />
         <Portfolio />
         <Services />

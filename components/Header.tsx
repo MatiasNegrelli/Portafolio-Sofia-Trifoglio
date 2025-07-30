@@ -14,8 +14,9 @@ const Header = () => {
 
   const navLinks = [
     { href: "#about", label: "Sobre Mí" },
-    { href: "#portfolio", label: "Portafolio" },
     { href: "#services", label: "Servicios" },
+    { href: "#portfolio", label: "Portafolio" },
+    { href: "#plans", label: "Planes" },
     { href: "#contact", label: "Contacto" },
   ];
 
@@ -66,18 +67,21 @@ const Header = () => {
         >
           Sofía Trifoglio
         </a>
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
+          {/* CAMBIO: Reducido space-x-8 a space-x-4 para los enlaces del menú */}
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-gray-600 hover:text-pink-600 font-medium transition-colors"
+              className="text-gray-600 hover:text-pink-600 font-medium transition-colors whitespace-nowrap"
+              // Agregado whitespace-nowrap para evitar saltos de línea inesperados
             >
               {link.label}
             </a>
           ))}
         </nav>
+        {/* El botón "Contratar" está fuera del nav para que quede a la derecha */}
         <a
           href="#contact"
           onClick={(e) => handleNavClick(e, "#contact")}
