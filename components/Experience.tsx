@@ -300,8 +300,19 @@ const projects = [
     logoColor: "bg-blue-500",
     mainImage: "/Lapez/FeedLAPEZ.png",
     posts: ["/img.png", "/img.png", "/img.png"],
-    stories: ["/Lapez/story1.jpg", "/Lapez/story2.jpg", "/Lapez/story3.jpg"],
-    videoUrl: "https://www.youtube.com/embed/LXb3EKWsInQ",
+    stories: [
+      "/Lapez/story1.jpg",
+      "/Lapez/story2.jpg",
+      "/Lapez/story3.jpg",
+      "/Lapez/story1.jpg",
+      "/Lapez/story2.jpg",
+      "/Lapez/story3.jpg",
+    ],
+    videoUrls: [
+      "https://www.youtube.com/embed/9Awe4Ep_JIQ",
+      "https://youtube.com/embed/j-_4bs3s80A",
+      "https://youtube.com/embed/4bX1d0MMecI",
+    ],
   },
   {
     client: "Nimai Centro Interdisciplinado",
@@ -322,7 +333,11 @@ const projects = [
       "/Nimai/story7.jpg",
       "/Nimai/story8.jpg",
     ],
-    videoUrl: "https://www.youtube.com/embed/LXb3EKWsInQ",
+    videoUrls: [
+      "https://youtube.com/embed/RTBdHvzS4Is",
+      "https://youtube.com/embed/xKS-C6jmmkM",
+      "https://youtube.com/embed/TYNVeYU_V-w",
+    ],
   },
   {
     client: "Canycat's Pet Shop",
@@ -349,7 +364,11 @@ const projects = [
       "/Canycat/story7.png",
       "/Canycat/story8.png",
     ],
-    videoUrl: "https://www.youtube.com/embed/LXb3EKWsInQ",
+    videoUrls: [
+      "https://youtube.com/embed/WYaCfGT8YcI",
+      "https://youtube.com/embed/hsYbFUEcppg",
+      "https://youtube.com/embed/-Ygbos5J9OM",
+    ],
   },
 ];
 
@@ -389,11 +408,9 @@ const Experience = () => {
                       </h3>
                     </div>
                     <div className="lg:flex-grow lg:flex lg:items-center">
-                      {/* Short description for mobile */}
                       <p className="text-gray-600 leading-relaxed block lg:hidden">
                         {project.shortDescription}
                       </p>
-                      {/* Full description for desktop */}
                       <p className="text-gray-600 leading-relaxed hidden lg:block">
                         {project.description}
                       </p>
@@ -433,17 +450,36 @@ const Experience = () => {
                   <CollapsibleSection title="Diseño de Historias">
                     <StoryScroller stories={project.stories} />
                   </CollapsibleSection>
-
                   <CollapsibleSection title="Reels / Videos">
-                    <div className="aspect-video w-full max-w-xl mx-auto bg-black rounded-2xl overflow-hidden shadow-lg border">
+                    {/* Mobile: solo 1 video */}
+                    <div className="sm:hidden w-full max-w-xs mx-auto bg-black rounded-2xl overflow-hidden shadow-lg border">
                       <iframe
-                        src={project.videoUrl}
+                        src={project.videoUrls[0]}
                         title={`Video para ${project.client}`}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
-                        className="w-full h-full"
+                        className="w-full aspect-[2/3]"
                       ></iframe>
+                    </div>
+
+                    {/* Desktop: múltiples videos en grilla */}
+                    <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+                      {project.videoUrls.map((url, idx) => (
+                        <div
+                          key={idx}
+                          className="w-full max-w-xs bg-black rounded-2xl overflow-hidden shadow-lg border aspect-[2/3]"
+                        >
+                          <iframe
+                            src={url}
+                            title={`Video ${idx + 1} de ${project.client}`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-full h-full"
+                          ></iframe>
+                        </div>
+                      ))}
                     </div>
                   </CollapsibleSection>
                 </div>
