@@ -299,7 +299,12 @@ const projects = [
       "Llevamos a cabo una gestión integral de las redes sociales para Lapez Inmobiliaria, con el objetivo de maximizar la visibilidad de sus propiedades y atraer a potenciales compradores e inquilinos. Nuestra estrategia incluyó la creación de contenido visual de alta calidad, como recorridos en video y fotografías profesionales, junto con la ejecución de campañas publicitarias altamente segmentadas en plataformas clave para alcanzar al público adecuado.",
     logoColor: "bg-blue-500",
     mainImage: "/Lapez/FeedLAPEZ.png",
-    posts: ["/img.png", "/img.png", "/img.png"],
+    posts: [
+      "/Lapez/post1.jpg",
+      "/Lapez/post2.jpg",
+      "/Lapez/post3.jpg",
+      "/Lapez/post4.jpg",
+    ],
     stories: [
       "/Lapez/story1.jpg",
       "/Lapez/story2.jpg",
@@ -322,7 +327,13 @@ const projects = [
       "Para Nimai, nuestro enfoque fue construir y nutrir una comunidad online sólida. Desarrollamos una estrategia de contenido centrada en compartir información valiosa sobre terapias, bienestar y talleres. El objetivo principal fue generar un espacio de confianza y diálogo, posicionando a los profesionales del centro como referentes en su campo y fortaleciendo la relación con su audiencia.",
     logoColor: "bg-teal-500",
     mainImage: "/Nimai/FeedNIMAI.jpg",
-    posts: ["/img.png", "/img.png", "/img.png"],
+    posts: [
+      "/Nimai/post1.jpg",
+      "/Nimai/post2.jpg",
+      "/Nimai/post3.jpg",
+      "/Nimai/post4.jpg",
+      "/Nimai/post5.jpg",
+    ],
     stories: [
       "/Nimai/story1.jpg",
       "/Nimai/story2.jpg",
